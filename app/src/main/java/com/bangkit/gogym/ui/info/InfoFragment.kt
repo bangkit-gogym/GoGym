@@ -1,4 +1,4 @@
-package com.bangkit.gogym.ui.dashboard
+package com.bangkit.gogym.ui.info
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.bangkit.gogym.databinding.FragmentDashboardBinding
+import com.bangkit.gogym.databinding.FragmentInfoBinding
 
-class DashboardFragment : Fragment() {
+class InfoFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentInfoBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+        val infoViewModel =
+            ViewModelProvider(this).get(InfoViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentInfoBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textInfo
+        infoViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
