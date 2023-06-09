@@ -3,6 +3,7 @@ package com.bangkit.gogym.ui.onboarding
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bangkit.gogym.LoginActivity
 import com.bangkit.gogym.MainActivity
 import com.bangkit.gogym.databinding.ActivityOnBoardingTwoBinding
 
@@ -16,7 +17,7 @@ class OnBoardingTwoActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button2.setOnClickListener {
-            var intent = Intent(this@OnBoardingTwoActivity, MainActivity::class.java)
+            var intent = Intent(this@OnBoardingTwoActivity, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
