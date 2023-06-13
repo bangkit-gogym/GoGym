@@ -1,0 +1,48 @@
+item { 
+	name:'Aerobic_Steppers'
+	id:1
+}
+item { 
+	name:'Barbell'
+	id:2
+}
+item { 
+	name:'Bench_Press'
+	id:3
+}
+item { 
+	name:'Cable_Machine'
+	id:4
+}
+item { 
+	name:'Dumb_Bell'
+	id:5
+}
+item { 
+	name:'Elliptical'
+	id:6
+}
+item { 
+	name:'Leg_Press_Machine'
+	id:7
+}
+item { 
+	name:'Multi_Machine'
+	id:8
+}
+item { 
+	name:'Rowing_Machine'
+	id:9
+}
+item { 
+	name:'Smith_Machine'
+	id:10
+}
+item { 
+	name:'Stationary_Bike'
+	id:11
+}
+item { 
+	name:'Treadmill'
+	id:12
+}
