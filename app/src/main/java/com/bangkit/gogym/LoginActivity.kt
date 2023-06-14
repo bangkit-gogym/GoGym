@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.bangkit.gogym.data.response.LoginResult
 import com.bangkit.gogym.databinding.ActivityLoginBinding
+import com.bangkit.gogym.helper.SessionPref
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         lateinit var loginResult: LoginResult
+        val pref = SessionPref(this)
 
 
         viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
@@ -45,7 +47,11 @@ class LoginActivity : AppCompatActivity() {
                 loginResult = response!!.data
                 Log.d("LOGINACTIVITY", "onCreate: ${loginResult.token}")
                 // then save user session and go to home page
-                startActivity(Intent(this, MainActivity::class.java))
+                pref.loginUser(loginResult)
+                // goto home page
+                val intent: Intent = Intent(this, MainActivity::class.java)
+                //intent.putExtra(MainActivity.EXTRA_TOKEN, loginResult.token)
+                startActivity(intent)
                 finish()
             }
         }

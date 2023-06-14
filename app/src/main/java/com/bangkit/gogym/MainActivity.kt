@@ -11,7 +11,12 @@ import com.bangkit.gogym.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+//    companion object {
+//        const val EXTRA_TOKEN = "extra_token"
+//    }
+
     private lateinit var binding: ActivityMainBinding
+//    val token = intent.getStringExtra(EXTRA_TOKEN)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,4 +38,6 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
+
 }

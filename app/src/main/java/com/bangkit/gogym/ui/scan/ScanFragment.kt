@@ -18,9 +18,15 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.bangkit.gogym.databinding.FragmentScanBinding
+import com.bangkit.gogym.helper.SessionPref
 import com.bangkit.gogym.helper.createCustomTempFile
+import com.bangkit.gogym.helper.reduceFileImage
 import com.bangkit.gogym.helper.uriToFile
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 
 class ScanFragment : Fragment() {
@@ -80,6 +86,9 @@ class ScanFragment : Fragment() {
 
         viewModel = ViewModelProvider(requireActivity())[ScanViewModel::class.java]
 
+        val pref = SessionPref(requireContext())
+        val token = "Bearer ${pref.getUserData(SessionPref.TOKEN)}"
+
         binding.btnGallery.setOnClickListener {
             startGallery()
         }
@@ -87,6 +96,31 @@ class ScanFragment : Fragment() {
         binding.btnCamera.setOnClickListener {
             startCamera()
         }
+
+        binding.btnProcess.setOnClickListener {
+            if (getFile != null) {
+                val file = reduceFileImage(getFile as File)
+                val requestImageFile = file.asRequestBody("image/jpeg".toMediaType())
+
+                val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                    "photo",
+                    file.name,
+                    requestImageFile
+                )
+
+                viewModel.scanPhoto(token, imageMultipart)
+
+            } else {
+                Toast.makeText(requireContext(), "Tidak ada gambar", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        viewModel.scanPhoto.observe(viewLifecycleOwner) {
+            if (it?.error == false) {
+                Toast.makeText(requireContext(), "Berhasil Post", Toast.LENGTH_SHORT).show()
+            }
+        }
+
 
 
     }
