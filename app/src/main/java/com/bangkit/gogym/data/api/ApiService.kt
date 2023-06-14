@@ -1,5 +1,6 @@
 package com.bangkit.gogym.data.api
 
+import com.bangkit.gogym.data.response.ListEquipmentResponse
 import com.bangkit.gogym.data.response.LoginResponse
 import com.bangkit.gogym.data.response.RegisterResponse
 import com.bangkit.gogym.data.response.ScanResponse
@@ -31,6 +32,9 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Part photo: MultipartBody.Part,
     ): Call<ScanResponse>
+
+    @GET("equipments")
+    fun getEquipment(): Call<ListEquipmentResponse>
 
 
 }
