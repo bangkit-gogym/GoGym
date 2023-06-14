@@ -42,8 +42,8 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel.loginUser.observe(this) { response ->
             if (response?.error == false) {
-                loginResult = response.loginResult
-                Log.d("LOGINACTIVITY", "onCreate: $loginResult")
+                loginResult = response!!.data
+                Log.d("LOGINACTIVITY", "onCreate: ${loginResult.token}")
                 // then save user session and go to home page
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()

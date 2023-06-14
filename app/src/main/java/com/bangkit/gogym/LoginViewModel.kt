@@ -1,6 +1,7 @@
 package com.bangkit.gogym
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bangkit.gogym.data.api.ApiConfig
@@ -16,7 +17,7 @@ class LoginViewModel : ViewModel() {
     }
 
     private val _loginUser = MutableLiveData<LoginResponse?>()
-    val loginUser = _loginUser
+    val loginUser: LiveData<LoginResponse?> = _loginUser
 
     fun loginUser(email: String, pw: String) {
         val client = ApiConfig.getApiService().login(email, pw)
@@ -25,8 +26,9 @@ class LoginViewModel : ViewModel() {
                 val responseBody = response.body()
                 if (response.isSuccessful) {
                     _loginUser.value = responseBody
+                    Log.d(TAG, "onResponse: berhasil")
                 }else {
-                    Log.e(TAG, "onResponse: ${response.message()} ", )
+                    Log.e(TAG, "onResponse else: ${response.message()} ", )
                 }
             }
 
