@@ -1,4 +1,4 @@
-# GoGym
+# GoGym Application
 
 ## Mobile Development Documentation
 The source code of Android app of GoGym using Kotlin in order to complete Bangkit Capstone Project.
