@@ -118,6 +118,8 @@ class ScanFragment : Fragment() {
         viewModel.scanPhoto.observe(viewLifecycleOwner) {
             if (it?.error == false) {
                 Toast.makeText(requireContext(), "Berhasil Post", Toast.LENGTH_SHORT).show()
+                binding.tvResult.visibility = View.VISIBLE
+                binding.btnTutorila.visibility = View.VISIBLE
             }
         }
 

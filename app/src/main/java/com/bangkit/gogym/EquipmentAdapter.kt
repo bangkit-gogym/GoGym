@@ -11,6 +11,12 @@ import com.bumptech.glide.Glide
 
 class EquipmentAdapter(private val listEquipmet: List<EquipmentItem>) : RecyclerView.Adapter<EquipmentAdapter.ViewHolder>() {
 
+    private lateinit var onItemCLickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemCLickCallback = onItemClickCallback
+    }
+
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val tvTitle: TextView = view.findViewById(R.id.tv_item_title)
         val ivImage: ImageView = view.findViewById(R.id.iv_item)
@@ -27,10 +33,18 @@ class EquipmentAdapter(private val listEquipmet: List<EquipmentItem>) : Recycler
         Glide.with(holder.ivImage)
             .load(imageUrl)
             .into(holder.ivImage)
+
+        holder.itemView.setOnClickListener {
+            onItemCLickCallback.onItemClicked(listEquipmet[position])
+        }
     }
 
     override fun getItemCount(): Int {
         return listEquipmet.size
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: EquipmentItem)
     }
 
 }

@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.bangkit.gogym.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_scan"
@@ -22,4 +26,31 @@
         android:name="com.bangkit.gogym.ui.info.InfoFragment"
         android:label="Info"
         tools:layout="@layout/fragment_info" />
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.bangkit.gogym.ui.home.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="judul"
+            app:argType="string"
+            android:defaultValue="Judul Equipment" />
+        <argument
+            android:name="Deskripsi"
+            app:argType="string"
+            android:defaultValue="Deskripsi Alat" />
+        <argument
+            android:name="gambar"
+            app:argType="string"
+            android:defaultValue="link gambar" />
+        <argument
+            android:name="url1"
+            app:argType="string"
+            android:defaultValue="link video 1" />
+        <argument
+            android:name="url2"
+            app:argType="string"
+            android:defaultValue="link video 2" />
+    </fragment>
 </navigation>

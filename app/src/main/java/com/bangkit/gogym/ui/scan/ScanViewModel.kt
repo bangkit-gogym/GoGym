@@ -30,6 +30,7 @@ class ScanViewModel : ViewModel(){
                 val responseBody = response.body()
                 if (response.isSuccessful) {
                     _scanPhoto.value = responseBody
+                    _scanPhoto.value = null
                 }else {
                     Log.e(TAG, "onResponse: ${response.message()}", )
                 }
