@@ -4,7 +4,7 @@
 The source code of Android app of GoGym using Kotlin in order to complete Bangkit Capstone Project.
 
  - ### Architecture for this project  
-![Android Travens drawio (1)](https://user-images.githubusercontent.com/86970816/172754208-3af01b8f-d7c8-44e6-b00d-8864c8f4b693.png)
+![architecture gogym](https://github.com/bangkit-gogym/GoGym/assets/84064388/68fe8fc7-4f98-42b8-96c3-7f0731ad072e)
 
  - ### Feature
       * **Splash Screen**, There is logo screen before into the login page
@@ -21,18 +21,17 @@ The source code of Android app of GoGym using Kotlin in order to complete Bangki
 
       * **Send image to server to detect a equipment**, After you prepare the image, you can click the process button to send the image and detect the image and get the detail about the equipment
 
-      * **Article About Travelling**,  in this application you can read articles about equipment
+      * **Article About Equipment Gym**,  in this application you can read articles about equipment
 
 
 * #### Dependencies :
+  - [Lottie Files](https://lottiefiles.com/)
+  - [Retrofit 2](https://square.github.io/retrofit/)    
+  - [Ok Http 3](https://square.github.io/okhttp/) 
   - [Jetpack Compose](https://developer.android.com/jetpack/compose)
+  - [kotlinx-coroutines](https://developer.android.com/kotlin/coroutines)  
   - [Lifecycle & Livedata](https://developer.android.com/jetpack/androidx/releases/lifecycle)
   - [Navigation Component](https://developer.android.com/jetpack/androidx/releases/navigation)
-  - [kotlinx-coroutines](https://developer.android.com/kotlin/coroutines)    
-  - [Retrofit 2](https://square.github.io/retrofit/)   
-  - [Firebase](https://firebase.google.com/docs/)    
-  - [Ok Http 3](https://square.github.io/okhttp/) 
-  - [Lottie Files](https://lottiefiles.com/) 
   - [Google Play services Maps](https://developers.google.com/maps/documentation/android-sdk/get-api-key) 
 
 ### Getting Started Application
@@ -47,14 +46,14 @@ The source code of Android app of GoGym using Kotlin in order to complete Bangki
         - Connect Android Studio with Firebase [Connect to Firebase](https://developer.android.com/studio/write/firebase)
         - Clone this repository and import into Android Studio    
             ```
-               https://github.com/travens-id/bangkit-mobile-development.git
+               https://github.com/bangkit-gogym/GoGym.git
             ``` 
         - Enter your API in buildConfigField `build.graddle`
            ``` defaultConfig {
                buildConfigField("String", "MAPS_TOKEN", '"Your Api Key"')}
 
   ## Acknowledgements
-  * [Clean Architecture Guide](https://developer.android.com/jetpack/guide)
-  * [Android Application Fundamental](https://developer.android.com/guide/components/fundamentals)
   * [Android Jetpack Pro](https://developer.android.com/jetpack)
+  * [Android Application Fundamental](https://developer.android.com/guide/components/fundamentals)
+  * [Clean Architecture Guide](https://developer.android.com/jetpack/guide)
   * [Dependency injection](https://developer.android.com/training/dependency-injection)
