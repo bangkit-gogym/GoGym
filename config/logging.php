@@ -55,6 +55,7 @@ return [
         'stack' => [
             'driver' => 'stack',
             'channels' => ['single'],
+            // 'channels' => ['stackdriver'],
             'ignore_exceptions' => false,
         ],
 
@@ -125,6 +126,11 @@ return [
 
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
+        ],
+
+        'stackdriver' => [
+            'driver' => 'stackdriver',
+            'level' => 'debug',
         ],
     ],
 

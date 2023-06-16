@@ -16,7 +16,7 @@ class PhotoController extends Controller
         $bucketName = "gogym-bangkit-capstone.appspot.com";
         $fileName = $request->file('photo')->getClientOriginalName();
 
-        return "https://storage.googleapis.com/" . $bucketName . "/" . $fileName;
+        return "https://storage.googleapis.com/" . $bucketName . "/" . "scan" . "/" . $fileName;
     }
 
     public function storePhotoForDetection(Request $request)
@@ -30,11 +30,13 @@ class PhotoController extends Controller
                 $extension = $request->photo->extension();
                 if (in_array($extension, $extensionAllowed)) {
                     $user =  auth('sanctum')->user();
-                    $disk->putFileAs('', new File($photo), $photo->getClientOriginalName());
+                    $predictedname = $request->get('predictedname');
+                    $disk->putFileAs('scan', new File($photo), $photo->getClientOriginalName());
                     Photo::create([
                         'user_id' => $user->id,
                         'filename' => $photo->getClientOriginalName(),
-                        'filepath' => $this->getPublicUrl($request)
+                        'filepath' => $this->getPublicUrl($request),
+                        'predictedname' => $predictedname
                     ]);
                     return response()->json([
                         'error' => false,

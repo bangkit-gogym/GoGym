@@ -9,7 +9,7 @@ class Photo extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['filename', 'filepath', 'user_id'];
+    protected $fillable = ['filename', 'filepath', 'user_id', 'predictedname'];
 
     public function users()
     {
