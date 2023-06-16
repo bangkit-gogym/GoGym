@@ -10,26 +10,22 @@ data class ListHistoryResponse (
     @field:SerializedName("message")
     val message: String,
 
-    @field:SerializedName("equipment")
-    val equipment: ArrayList<HistoryItem>
+    @field:SerializedName("photo")
+    val history: ArrayList<HistoryItem>
 )
 
 data class HistoryItem(
-    @field:SerializedName("id")
-    val id: String,
+//    @field:SerializedName("id")
+//    val id: String,
 
-    @field:SerializedName("name")
+    @field:SerializedName("predictedname")
     val name: String,
 
-    @field:SerializedName("ref1Url")
-    val ref1Url: String,
-
-    @field:SerializedName("ref2Url")
-    val ref2Url: String,
-
-    @field:SerializedName("description")
-    val description: String,
-
-    @field:SerializedName("photoUrl")
+    @field:SerializedName("filepath")
     val photoUrl: String,
+
+    @field:SerializedName("created_at")
+    val date: String,
+
+
 )

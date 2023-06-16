@@ -34,8 +34,10 @@ interface ApiService {
     @GET("equipments")
     fun getEquipment(): Call<ListEquipmentResponse>
 
-    @GET("history")
-    fun getHistory(): Call<ListHistoryResponse>
+    @GET("equipments/detection/history")
+    fun getHistory(
+        @Header("Authorization") token: String
+    ): Call<ListHistoryResponse>
 
 
 }
