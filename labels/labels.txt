@@ -1,0 +1,11 @@
+aerobic_steppers
+barbell
+bench_press
+cable_machine
+dumb_bell
+elliptical
+leg_press_machine
+rowing_machine
+smith_machine
+stationary_bike
+treadmill
