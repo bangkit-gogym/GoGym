@@ -11,4 +11,7 @@
 - [Google Images](https://images.google.com/)
 
 # Detection Labels
-[Label Map]()
+[Label Map](https://github.com/bangkit-gogym/GoGym/blob/Machine-Learning/labels/label_map.pbtxt)
+((mungkin bisa berubah nnti stlh deploy))
+
+# 
