@@ -1,3 +1,5 @@
+<p align="center"><a href="/" target="_blank"><img src="https://storage.googleapis.com/gogym-bangkit-capstone.appspot.com/LogoGoGym.png" width="400" alt="GoGym Logo"></a></p>
+
 # GoGym-Machine-Learning
 The source code of machine learning model's of GoGym in order to complete Bangkit Capstone Project
 
@@ -21,6 +23,6 @@ The source code of machine learning model's of GoGym in order to complete Bangki
 ## Get Data
 [GetData](https://colab.research.google.com/drive/1wJ_ga8E21tl1qk1684pTNJmfN0ELecNC?usp=sharing)
 
-## Architecture of .... Mobilenet for Gym Equipment Detection
+## Architecture of Mobilenet for Gym Equipment Detection
+![Arsitektur MobileNet](https://github.com/bangkit-gogym/GoGym/blob/Machine-Learning/assets/Arsitektur%20mobile%20net.png)
 
-## References
