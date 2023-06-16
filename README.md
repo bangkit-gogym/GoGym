@@ -1,5 +1,6 @@
 # GoGym-Machine-Learning
-The source code of machine learning model's API of Travens smart guide in order to complete Bangkit Capstone Project
+The source code of machine learning model's API of GoGym in order to complete Bangkit Capstone Project
+
 ## Model Building's Notebook
 [Gym Equipment Detection Notebook](https://colab.research.google.com/drive/1lpqiWWsqOAdT8ymVyOaknCTqCBMEQs7X?usp=sharing)
 
@@ -15,7 +16,7 @@ The source code of machine learning model's API of Travens smart guide in order 
 ((mungkin bisa berubah nnti stlh deploy))
 
 ## The Flow of Machine Learning Service
-(https://github.com/bangkit-gogym/GoGym/blob/Machine-Learning/assets/Machine%20Learning%20Service.png)
+[ML Service](https://github.com/bangkit-gogym/GoGym/blob/Machine-Learning/assets/Machine%20Learning%20Service.png)
 
 ## How to run this .. App
 (langkah running)
