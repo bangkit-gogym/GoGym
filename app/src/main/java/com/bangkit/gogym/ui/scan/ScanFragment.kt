@@ -21,6 +21,7 @@ import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.bangkit.gogym.databinding.FragmentScanBinding
 import com.bangkit.gogym.helper.SessionPref
 import com.bangkit.gogym.helper.createCustomTempFile
@@ -112,6 +113,7 @@ class ScanFragment : Fragment() {
             startCamera()
         }
 
+        lateinit var predictedname: String
         binding.btnProcess.setOnClickListener {
             if (getFile != null) {
                 val fileUpload = reduceFileImage(getFile as File)
@@ -124,7 +126,7 @@ class ScanFragment : Fragment() {
                     requestImageFile
                 )
 
-                val predictedname = predictImage(file)//.toRequestBody("text/plain".toMediaType())
+                predictedname = predictImage(file)//.toRequestBody("text/plain".toMediaType())
                 Log.d("SCANFRAG", "onViewCreated: $predictedname")
                 viewModel.scanPhoto(token, imageMultipart, predictedname)
 
@@ -140,6 +142,11 @@ class ScanFragment : Fragment() {
 //                binding.tvResult.visibility = View.VISIBLE
 //                binding.btnTutorila.visibility = View.VISIBLE
             }
+        }
+
+
+        binding.btnTutorila.setOnClickListener {
+            getTutorial(predictedname)
         }
 
 
@@ -275,6 +282,30 @@ class ScanFragment : Fragment() {
             }
         }
         return byteBuffer
+    }
+
+    private fun getTutorial(equipment: String) {
+        val tutorialMap = mapOf(
+            "Aerobic Steppers" to 4,
+            "Barbell/Dumbbell" to 1,
+            "Bench Press" to 2,
+            "Cable Machine" to 10,
+            "Elliptical" to 3,
+            "Leg Press Machine" to 9,
+            "Rowing Machine" to 5,
+            "Smith Machine" to 8,
+            "Stationary Bike" to 7,
+            "Treadmill" to 6
+        )
+
+        val tutorialId = tutorialMap[equipment]
+
+        val toTutorialFragment = ScanFragmentDirections.actionNavigationScanToTutorialFragment()
+        toTutorialFragment.id = tutorialId!!
+
+        findNavController().navigate(toTutorialFragment)
+
+
     }
 
 

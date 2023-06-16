@@ -19,7 +19,11 @@
         android:id="@+id/navigation_scan"
         android:name="com.bangkit.gogym.ui.scan.ScanFragment"
         android:label="Scan"
-        tools:layout="@layout/fragment_scan" />
+        tools:layout="@layout/fragment_scan" >
+        <action
+            android:id="@+id/action_navigation_scan_to_tutorialFragment"
+            app:destination="@id/tutorialFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_info"
@@ -58,4 +62,14 @@
         android:name="com.bangkit.gogym.ui.history.HistoryFragment"
         android:label="History"
         tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/tutorialFragment"
+        android:name="com.bangkit.gogym.ui.scan.TutorialFragment"
+        android:label="fragment_tutorial"
+        tools:layout="@layout/fragment_tutorial" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>

@@ -39,5 +39,8 @@ interface ApiService {
         @Header("Authorization") token: String
     ): Call<ListHistoryResponse>
 
+    @GET("equipments/{id}")
+    fun getEquipmentDetail(@Path("id") id: Int): Call<EquipmentDetailResponse>
+
 
 }
