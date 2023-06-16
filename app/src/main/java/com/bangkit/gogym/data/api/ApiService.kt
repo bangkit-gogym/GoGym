@@ -1,9 +1,6 @@
 package com.bangkit.gogym.data.api
 
-import com.bangkit.gogym.data.response.ListEquipmentResponse
-import com.bangkit.gogym.data.response.LoginResponse
-import com.bangkit.gogym.data.response.RegisterResponse
-import com.bangkit.gogym.data.response.ScanResponse
+import com.bangkit.gogym.data.response.*
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -31,10 +28,14 @@ interface ApiService {
     fun scan(
         @Header("Authorization") token: String,
         @Part photo: MultipartBody.Part,
+        @Part("predictedname") predictedname : String
     ): Call<ScanResponse>
 
     @GET("equipments")
     fun getEquipment(): Call<ListEquipmentResponse>
+
+    @GET("history")
+    fun getHistory(): Call<ListHistoryResponse>
 
 
 }

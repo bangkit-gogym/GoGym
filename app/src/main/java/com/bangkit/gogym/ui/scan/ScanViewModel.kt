@@ -8,6 +8,7 @@ import com.bangkit.gogym.data.api.ApiConfig
 import com.bangkit.gogym.data.api.ApiService
 import com.bangkit.gogym.data.response.ScanResponse
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,9 +23,9 @@ class ScanViewModel : ViewModel(){
     private val _scanPhoto = MutableLiveData<ScanResponse?>()
     val scanPhoto: LiveData<ScanResponse?> = _scanPhoto
 
-    fun scanPhoto(token: String, file: MultipartBody.Part) {
+    fun scanPhoto(token: String, file: MultipartBody.Part, predictedname: String) {
 
-        val client = ApiConfig.getApiService().scan(token, file)
+        val client = ApiConfig.getApiService().scan(token, file, predictedname)
         client.enqueue(object :Callback<ScanResponse> {
             override fun onResponse(call: Call<ScanResponse>, response: Response<ScanResponse>) {
                 val responseBody = response.body()

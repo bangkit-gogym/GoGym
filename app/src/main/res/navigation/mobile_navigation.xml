@@ -53,4 +53,9 @@
             app:argType="string"
             android:defaultValue="link video 2" />
     </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.bangkit.gogym.ui.history.HistoryFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_history" />
 </navigation>
