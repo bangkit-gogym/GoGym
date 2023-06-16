@@ -27,7 +27,8 @@ import com.bangkit.gogym.helper.SessionPref
 import com.bangkit.gogym.helper.createCustomTempFile
 import com.bangkit.gogym.helper.reduceFileImage
 import com.bangkit.gogym.helper.uriToFile
-import com.bangkit.gogym.ml.GymModel
+//import com.bangkit.gogym.ml.GymModel
+//import com.bangkit.gogym.ml.GymModelFix
 import com.bangkit.gogym.ml.GymModelRev
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody

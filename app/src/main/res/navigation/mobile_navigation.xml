@@ -34,7 +34,7 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.bangkit.gogym.ui.home.DetailFragment"
-        android:label="fragment_detail"
+        android:label="Detail"
         tools:layout="@layout/fragment_detail" >
         <argument
             android:name="judul"
@@ -65,11 +65,17 @@
     <fragment
         android:id="@+id/tutorialFragment"
         android:name="com.bangkit.gogym.ui.scan.TutorialFragment"
-        android:label="fragment_tutorial"
+        android:label="Tutorial"
         tools:layout="@layout/fragment_tutorial" >
         <argument
             android:name="id"
             app:argType="integer"
             android:defaultValue="0" />
     </fragment>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.bangkit.gogym.ui.map.MapFragment"
+        android:label="Nearest Gym"
+        tools:layout="@layout/fragment_map" />
 </navigation>

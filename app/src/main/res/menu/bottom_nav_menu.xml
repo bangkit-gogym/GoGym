@@ -7,18 +7,24 @@
         android:title="@string/title_home" />
 
     <item
+        android:id="@+id/mapFragment"
+        android:icon="@drawable/ic_baseline_map_24"
+        android:title="Map"/>
+
+    <item
         android:id="@+id/navigation_scan"
         android:icon="@drawable/ic_baseline_scan_24"
         android:title="Scan" />
+
+    <item
+        android:id="@+id/historyFragment"
+        android:icon="@drawable/ic_baseline_history_24"
+        android:title="History"/>
 
     <item
         android:id="@+id/navigation_info"
         android:icon="@drawable/ic_baseline_info_24"
         android:title="Info" />
 
-    <item
-        android:id="@+id/historyFragment"
-        android:icon="@drawable/ic_baseline_history_24"
-        android:title="History"/>
 
 </menu>
