@@ -16,7 +16,7 @@ The source code of machine learning model's API of GoGym in order to complete Ba
 ((mungkin bisa berubah nnti stlh deploy))
 
 ## The Flow of Machine Learning Service
-[ML Service](https://github.com/bangkit-gogym/GoGym/blob/Machine-Learning/assets/Machine%20Learning%20Service.png)
+![ML Service](https://github.com/bangkit-gogym/GoGym/blob/Machine-Learning/assets/Machine%20Learning%20Service.png)
 
 ## How to run this .. App
 (langkah running)
