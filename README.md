@@ -1,4 +1,4 @@
-# GoGym Application
+<p align="center"><a href="/" target="_blank"><img src="https://storage.googleapis.com/gogym-bangkit-capstone.appspot.com/LogoGoGym.png" width="400" alt="GoGym Logo"></a></p>
 
 ## Mobile Development Documentation
 The source code of Android app of GoGym using Kotlin in order to complete Bangkit Capstone Project.
